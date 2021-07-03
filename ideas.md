@@ -47,6 +47,7 @@ This is a bit messy, it will be split out later to seperate docs, just writing d
   - Widely available on different CPU architectures
   - Requires no special runtime installed
   - Using gRPC for RPC between the API and the backend daemons
+    - Tonic
   - Responsible for changing OS settings, firewall rules, etc
   - Responsible for reporting live metrics to the Webinterface (and possible to the API as well TBD)
   - Calling native functions, so not just calling out to shell commands
