@@ -7,6 +7,8 @@ This is a bit messy, it will be split out later to seperate docs, just writing d
 - It will not be intended for small embedded systems (think typical OpenWRT devices)
   - It's fine if it works, but should not limit design choices and small embedded devices are not in the scope of this project
   - Focus is on being installed on native x86 64bit hardware with >4Gb memory, or running it as a VM
+    - ARM64 might work, but not a focus initially
+    - Mostly down to which architectures the Linux Kernel / Dotnet / Rust supports.
   - That is not to say resources should be wasted, but the focus should be on speed (network/appliance services), not on minimizing resource usage (cpu/mem)
     
 - Supporting a "Central" appliance, that can manage multiple sites
@@ -36,8 +38,12 @@ This is a bit messy, it will be split out later to seperate docs, just writing d
   - Allows adding a local CLI as well
 
 - Webinterface/API built using C# with .NET 5.0 (6.0 when released), using ASP.NET Core MVC
+  - Might be replaced by Rust as well, but havent found any real good comparable frameworks yet, so TBD in the future, but initally will be .NET based.
 
 - Backend daemons built using Rust
+  - Speed, and safety features
+  - Widely available on different CPU architectures
+  - Requires no special runtime installed
   - Using gRPC for RPC between the API and the backend daemons
   - Responsible for changing OS settings, firewall rules, etc
   - Responsible for reporting live metrics to the Webinterface (and possible to the API as well TBD)
