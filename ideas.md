@@ -39,6 +39,8 @@ This is a bit messy, it will be split out later to seperate docs, just writing d
 
 - Webinterface/API built using C# with .NET 5.0 (6.0 when released), using ASP.NET Core MVC
   - Might be replaced by Rust as well, but havent found any real good comparable frameworks yet, so TBD in the future, but initally will be .NET based.
+    - .NET limits the CPU architectures supported (32/64bit x86, ARM64).
+    - Most of the actual work is done from the backend daemons, so not the end of the world to replace later on.
 
 - Backend daemons built using Rust
   - Speed, and safety features
